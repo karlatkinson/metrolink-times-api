@@ -6,6 +6,10 @@ var app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
+app.get('/', function(req, res) {
+    return res.json({ status: 'nothing to see here....'});
+});
+
 app.get('/api/stations/:station', function(req, res) {
 
     var options = {
@@ -26,9 +30,9 @@ app.get('/api/stations/:station', function(req, res) {
                 var unit = $(this).find('.departure-wait').find('.unit').text();
 
                 times.push({
-                  destination,
-                  type,
-                  due: `${wait} ${unit}`
+                    destination,
+                    type,
+                    due: `${wait} ${unit}`
                 })
             });
 
@@ -40,7 +44,7 @@ app.get('/api/stations/:station', function(req, res) {
 })
 
 app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
+    console.log('Node app is running on port', app.get('port'));
 });
 
 exports = module.exports = app;

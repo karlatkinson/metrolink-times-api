@@ -24,8 +24,8 @@ app.get('/api/stations/:station', function(req, res) {
     rp(options)
         .then(function($) {
             $('#departure-items tr').each(function() {
-                let destination = $(this).find('.departure-destination').text();
-                let type = $(this).find('.departure-carriages span').first().text();
+                var destination = $(this).find('.departure-destination').text();
+                var type = $(this).find('.departure-carriages span').first().text();
                 var wait = $(this).find('.departure-wait').find('.figure').text();
                 var unit = $(this).find('.departure-wait').find('.unit').text();
 

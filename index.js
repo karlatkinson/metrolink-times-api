@@ -1,6 +1,6 @@
-var express = require('express');
-var errorHandler = require('./lib/errorHandler');
-var app = express();
+const express = require('express');
+const errorHandler = require('./lib/errorHandler');
+const app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
